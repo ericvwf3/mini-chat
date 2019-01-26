@@ -68,6 +68,7 @@
                 //Affichage des 10 derniers messages avec sécurisation faille XSS (htmlspecialchars)
                 while ($donnees = $reponse->fetch())
                 {
+                    //Affichage de la date au format fr
                     $dateFr = date("d-M-Y" . " à " . "H:i:s", strtotime($donnees['date']));
                     echo $dateFr . ' : <strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</br>';
                 }
